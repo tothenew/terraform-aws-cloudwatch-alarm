@@ -24,20 +24,20 @@ module ec2-CloudWatch-memory   {
     instance_id =   var.instance_id
 }
 
-#module lb_request {
-#    source        =   "./load-balancer/requestCount/"
-#    loadbalancers = var.loadbalancers
-#}
+module lb_request {
+    source        =   "./load-balancer/requestCount/"
+    loadbalancers = var.loadbalancers
+}
 
-#module lb_target_response_time {
-#    source        =   "./load-balancer/targetresponsetime/"
-#    loadbalancers = var.loadbalancers
-#}
+module lb_target_response_time {
+    source        =   "./load-balancer/targetresponsetime/"
+    loadbalancers = var.loadbalancers
+}
 
-#module unhealthyhost {
-#    source        =   "./load-balancer/unhealthyHost/"
-#    loadbalancers = var.loadbalancers
-#}
+module unhealthyhost {
+    source        =   "./load-balancer/unhealthyHost/"
+    loadbalancers = var.loadbalancers
+}
 
 
 resource "aws_cloudwatch_metric_alarm" "cpu_high" {
