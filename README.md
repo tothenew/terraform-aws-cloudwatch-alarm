@@ -31,7 +31,7 @@ This module creates and manages the following types of resources:
 
 ```hcl
 module "cloudwatch-monitoring" {
-  source = "./path-to-module"
+  source = "git::https://github.com/tothenew/terraform-aws-cloudwatch-alarm"
 
   instance_id = ["i-08ef9201037dd01da"]
   alb_names   = ["test-1"]
