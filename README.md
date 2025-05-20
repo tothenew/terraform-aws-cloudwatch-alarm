@@ -33,7 +33,7 @@ This module creates and manages the following types of resources:
 module "cloudwatch-monitoring" {
   source = "git::https://github.com/tothenew/terraform-aws-cloudwatch-alarm"
 
-  instance_id = ["i-08ef9201037dd01da"]
+  instance_id = ["i-000000000"]
   alb_names   = ["test-1"]
   target_group_name = ["test-tg"]
   requests = true
