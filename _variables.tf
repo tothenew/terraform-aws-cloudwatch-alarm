@@ -25,3 +25,8 @@ variable "loadbalancers" {
     az           = string
   }))
 }
+
+variable "alarm_action_arn" {
+  description = "ARN of the SNS topic to notify on alarm"
+  type        = string
+}

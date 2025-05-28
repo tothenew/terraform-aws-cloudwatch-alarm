@@ -40,3 +40,19 @@ module unhealthyhost {
 }
 
 
+resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+  alarm_name          = "HighCPUUtilization-${var.instance_id[0]}"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 2
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/EC2"
+  period              = 300
+  statistic           = "Average"
+  threshold           = 80
+  alarm_description   = "This alarm monitors high CPU utilization"
+  dimensions = {
+    InstanceId = var.instance_id[0]
+  }
+  actions_enabled = true
+  alarm_actions   = [var.alarm_action_arn] # Replace with your SNS ARN
+}
